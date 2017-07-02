@@ -27,6 +27,9 @@ $ echo meow | flowterm
 # "meow"(ASCII Art) flows in the terminal.
 $ banner meow | flowterm
 
+# "meow" that is said by a cow flows in the terminal.
+$ cowsay meow | flowterm
+
 $ flowterm --help
 Usage: flowterm [options]
         --speed=speed
@@ -34,6 +37,8 @@ Usage: flowterm [options]
 ```
 
 ![basic-usage-animation](https://user-images.githubusercontent.com/4361134/27766824-dbc14eda-5f19-11e7-9b74-6f7c679bde82.gif)
+
+![cowsay-animation](https://user-images.githubusercontent.com/4361134/27766843-d7e6297e-5f1a-11e7-9fab-7e83bdc13621.gif)
 
 ## Advanced Usage
 
