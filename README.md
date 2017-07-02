@@ -33,6 +33,8 @@ Usage: flowterm [options]
         --[no-]trap
 ```
 
+![basic-usage-animation](https://user-images.githubusercontent.com/4361134/27766824-dbc14eda-5f19-11e7-9b74-6f7c679bde82.gif)
+
 ## Advanced Usage
 
 If you use zsh, you can run a command by this command when you typo the command.
@@ -46,6 +48,9 @@ command_not_found_handler()
   return 127
 }
 ```
+
+
+![command-not-found-usage](https://user-images.githubusercontent.com/4361134/27766826-04215de8-5f1a-11e7-88dd-95b829581b69.gif)
 
 License
 -------
