@@ -5,10 +5,14 @@ require "flowterm/version"
 class Flowterm
   def initialize(argv, input)
     @sleep = 1 / 25.0
+    @trap = true
 
     opt = OptionParser.new
     opt.on('--speed=speed') { |v| @sleep = 1 / v.to_f }
+    opt.on('--[no-]trap') { |v| @trap = v }
     opt.parse!(argv)
+
+    Signal.trap(:INT, nil) if @trap
     @str = input.read
   end
 
