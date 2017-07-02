@@ -1,8 +1,6 @@
 # Flowterm
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flowterm`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+String flows in a terminal.
 
 ## Installation
 
@@ -20,16 +18,38 @@ Or install it yourself as:
 
     $ gem install flowterm
 
-## Usage
+## Basic Usage
 
-TODO: Write usage instructions here
+```bash
+# "meow" flows in the terminal.
+$ echo meow | flowterm
 
-## Development
+# "meow"(ASCII Art) flows in the terminal.
+$ banner meow | flowterm
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+$ flowterm --help
+Usage: flowterm [options]
+        --speed=speed
+        --[no-]trap
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Advanced Usage
 
-## Contributing
+If you use zsh, you can run a command by this command when you typo the command.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/pocke/flowterm.
+```zsh
+# .zshrc
+command_not_found_handler()
+{
+  banner "$*" | flowterm
+  echo "command not found: $*"
+  return 127
+}
+```
+
+License
+-------
+
+These codes are licensed under CC0.
+
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.en)
