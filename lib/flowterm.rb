@@ -1,10 +1,15 @@
 require 'curses'
+require 'optparse'
 require "flowterm/version"
 
 class Flowterm
   def initialize(argv, input)
+    @sleep = 1 / 25.0
+
+    opt = OptionParser.new
+    opt.on('--speed=speed') { |v| @sleep = 1 / v.to_f }
+    opt.parse!(argv)
     @str = input.read
-    @argv = argv
   end
 
   def run
@@ -12,7 +17,7 @@ class Flowterm
     begin
       Curses.cols.times do |idx|
         render(@str, -idx)
-        sleep 0.04
+        sleep @sleep
       end
     ensure
       Curses.close_screen
