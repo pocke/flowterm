@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{String flows in a terminal}
   spec.description   = %q{String flows in a terminal}
   spec.homepage      = "https://github.com/pocke/flowterm"
+  spec.license       = 'CC0-1.0'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
